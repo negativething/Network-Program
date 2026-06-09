@@ -1,0 +1,8 @@
+关于在maixcam上如何运用网络编程让maixcam获取摄像头，通过网络传输到电脑上，并保存视频为mp4格式的思路
+
+在实际应用前，请移步到MaixCDK的API中查看并掌握video、network、wifi、rtsp、http、rtmp、webrtc的基本用法(建议使用ai辅助学习)
+
+！！！在使用rtsp协议传输时，摄像头初始化不能为之前案例所示的FMT_RGB888格式,而是要FMT_YVU420SP格式！！！
+
+在maixcam上的是服务端，在接收图像的电脑上是客户端(使用rtsp协议传输?占用和延迟都挺高的。建议使用udp，占用和延迟都极低)
+至于怎么把每一帧拼接保存为mp4格式，需要用到encoder(不是recoder！！！)，在example里搜索encode
